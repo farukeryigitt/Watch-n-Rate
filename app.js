@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 //routes import
 const authRoute = require('./Routes/authRoutes.js');
 const postRoute = require("./Routes/postRoutes.js");
@@ -19,6 +20,7 @@ mongoose
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 //routes
 app.use("/api/v1/auth" , authRoute);
