@@ -126,6 +126,13 @@ exports.changepassword = async (req, res) => {
       message: 'your password changed.',
     });
   } catch (error) {
+    console.log(error);
+    res
+    .status(500)
+    .json({
+      success: false,
+      message: 'An error occurred while fetching comments.',
+    });
     
   }
 };
@@ -157,6 +164,12 @@ exports.sendforgotcode = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    res
+    .status(500)
+    .json({
+      success: false,
+      message: 'An error occurred while fetching comments.',
+    });
   }
 };
 
@@ -213,5 +226,11 @@ exports.verifyforgotpasswordcode = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    res
+    .status(500)
+    .json({
+      success: false,
+      message: 'An error occurred while fetching comments.',
+    });
   }
 };
